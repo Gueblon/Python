@@ -28,44 +28,44 @@ class Player(pygame.sprite.Sprite):
 
 
 ##Класс создания анимаций
-class Animation:
+#class Animation:
     # sprite это содержание кадры, time время каждого кадра
-    def _init_(self, sprites = None, time = 100):
-        self.sprites = sprites
-        self.time = time
+    #def _init_(self, sprites = None, time = 100):
+        #self.sprites = sprites
+        #self.time = time
         #счетчик времени
-        self.work_time = 0
+        #self.work_time = 0
         #СКОЛЬКО кадров нужно пропустить
-        self.skip_frame = 0
+        #self.skip_frame = 0
         #номер кадр, который показываем
-        self.flame = 0
+        #self.flame = 0
         #функция получения времени с помощью комнады pygame.time.Clock()
-    def update(self, dt):
+    #def update(self, dt):
         #прибовляем это время к счетчику, чтобы узнать сколько кадров нужно пропустить
-        self.work_time +=dt
+        #self.work_time +=dt
         #вычесляем сколько кадров нужно пролестнуть
-        self.skip_frame = self.work_time/ self.time
-        if self.skip_frame >0:
-            self.work_time = self.work_time % self.time
+        #self.skip_frame = self.work_time/ self.time
+        #if self.skip_frame >0:
+            #self.work_time = self.work_time % self.time
             #прибавляем количество кадров, которе надо пролистнуть
-            self.frame +=self.skip_frame
+            #self.frame +=self.skip_frame
             #проверяем не больше ли текущих кадров, чем есть вообще
-            if self.frame >=len(self.sprites):
-                self.frame = 0
-    def get_sprite(self):
-        return self.sprites[self.frame]
+            #if self.frame >=len(self.sprites):
+                #self.frame = 0
+    #def get_sprite(self):
+        #return self.sprites[self.frame]
 ##Загружаем изображение с раскадровкой
-sprite = pygame.image.load('Sprites/1 Woodcutter/Woodcutter_walk.png').convert_alpha()
+#sprite = pygame.image.load('Sprites/1 Woodcutter/Woodcutter_walk.png').convert_alpha()
                     #вырезаем кадры"
 #контейнер для кадров будущей анимаций
-anim = []:
-anim.append(sprite.subsurface((0,0,40,40)))
-anim.append(sprite.subsurface((40,0,40,40)))
-anim.append(sprite.subsurface((60,0,40,40)))
-anim.append(sprite.subsurface((40,0,40,40)))
-#создаём кадровую ленту
-time=180
-target = Animation(anim, time)
+#anim = []:
+#anim.append(sprite.subsurface((0,0,40,40)))
+#anim.append(sprite.subsurface((40,0,40,40)))
+#anim.append(sprite.subsurface((60,0,40,40)))
+#anim.append(sprite.subsurface((40,0,40,40)))
+###создаём кадровую ленту
+#time=180
+#target = Animation(anim, time)
 #-----------------------------------------
 # загрузка спрайтов
 
