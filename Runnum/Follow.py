@@ -54,4 +54,4 @@ try:
     flw(ls, y, flwme)
 
 except:
-    print("Проверь файлы")
+    print("Проверь файлы!")
